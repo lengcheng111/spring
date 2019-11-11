@@ -1,14 +1,12 @@
 package com.dao;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.model.Student;
+import com.model.ClassDTO;
 
-public class StudentDAOHibernate {
+public class ClassDAOHibernate {
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -20,16 +18,11 @@ public class StudentDAOHibernate {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public void save(Student student) {
+	public void save(ClassDTO classDTO) {
 		final Session session = this.sessionFactory.openSession();
 		session.beginTransaction();
-		session.save(student);
+		session.save(classDTO);
 		session.getTransaction().commit();
 		session.close();
-	}
-
-	public List<Student> findAll() {
-		final Session session = this.sessionFactory.openSession();
-		return (List<Student>) session.createCriteria(Student.class).list();
 	}
 }

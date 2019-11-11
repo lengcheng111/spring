@@ -8,14 +8,15 @@
 	<context:component-scan base-package="com.dao"></context:component-scan>
 	<bean name="studentDAO" class="com.dao.StudentDAO"></bean>
 	<bean name="studentDAOHibernate" class="com.dao.StudentDAOHibernate"></bean>
+	<bean name="classDAOHibernate" class="com.dao.ClassDAOHibernate"></bean>
 	<bean name="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="url"
-			value="jdbc:postgresql://localhost:5433/test2"></property>
+			value="jdbc:postgresql://localhost:5433/student"></property>
 		<property name="driverClassName"
 			value="org.postgresql.Driver"></property>
-		<property name="username" value="postgres"></property>
-		<property name="password" value="123456"></property>
+		<property name="username" value="ebx"></property>
+		<property name="password" value="onvn_25t2"></property>
 	</bean>
 
 	<bean id="sessionFactory"
@@ -26,7 +27,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 	</bean>

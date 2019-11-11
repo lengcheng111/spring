@@ -1,5 +1,6 @@
 package com.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,12 +11,27 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "local")
 	private String local;
+	@Column(name = "class_id")
+	private int classId;
 
-	public Student(int id, String name, String local) {
+	public int getClassId() {
+		return classId;
+	}
+
+	public void setClassId(int classId) {
+		this.classId = classId;
+	}
+
+	public Student() {
 		super();
-		this.id = id;
+	}
+
+	public Student(String name, String local) {
+		super();
 		this.name = name;
 		this.local = local;
 	}
