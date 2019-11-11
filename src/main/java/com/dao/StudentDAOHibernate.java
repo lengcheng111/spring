@@ -30,6 +30,6 @@ public class StudentDAOHibernate {
 
 	public List<Student> findAll() {
 		final Session session = this.sessionFactory.openSession();
-		return (List<Student>) session.createCriteria(Student.class).list();
+		return session.createCriteria(Student.class).list();
 	}
 }

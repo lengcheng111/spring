@@ -15,16 +15,6 @@ public class Student {
 	private String name;
 	@Column(name = "local")
 	private String local;
-	@Column(name = "class_id")
-	private int classId;
-
-	public int getClassId() {
-		return classId;
-	}
-
-	public void setClassId(int classId) {
-		this.classId = classId;
-	}
 
 	public Student() {
 		super();
